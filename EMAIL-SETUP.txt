@@ -1,0 +1,38 @@
+========================================
+AGS Desktop — share / install
+========================================
+
+FOR END USERS (recommended)
+---------------------------
+1) Builder runs BUILD-WINDOWS.bat
+2) Send only the EXE from dist/:
+   - AGS-Trade-Pricing-Setup-1.2.0.exe  (installer)
+   - OR AGS-Trade-Pricing-Portable-1.2.0.exe
+3) User installs / runs — no Node, no Python needed.
+
+FOR DEVELOPERS
+--------------
+npm install && npm start
+
+DATA LOCATION
+-------------
+Windows: %APPDATA%\AGS-Trade-Pricing\AGS-Data\
+  - ags.db          main database
+  - backups/        manual backups
+
+Settings → Open data folder
+Settings → Backup database
+
+SHARE CAD DESIGNS
+-----------------
+CAD Craft → Export JSON
+(or copy ags.db / restore via Settings)
+
+QUOTE WORKFLOW (v1.2)
+---------------------
+Draft → Sent → Accepted → Invoiced
+(or Cancelled)
+
+Quotes page: filter by status, sort, duplicate, delete.
+
+========================================

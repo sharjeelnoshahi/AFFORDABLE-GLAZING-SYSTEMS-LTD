@@ -1,0 +1,77 @@
+{
+  "name": "ags-trade-pricing",
+  "productName": "AGS Trade Pricing",
+  "version": "1.4.9",
+  "description": "Affordable Glazing Systems trade pricing, quotations, CAD and local database desktop application",
+  "main": "main.js",
+  "author": "Affordable Glazing Systems Ltd",
+  "publisherName": "Affordable Glazing Systems Ltd",
+  "license": "UNLICENSED",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder --win nsis portable",
+    "dist:installer": "electron-builder --win nsis",
+    "dist:portable": "electron-builder --win portable"
+  },
+  "build": {
+    "appId": "com.affordableglazing.agstradepricing",
+    "productName": "AGS Trade Pricing",
+    "artifactName": "AGS-Trade-Pricing-Setup-${version}.${ext}",
+    "copyright": "Copyright \u00a9 2026 Affordable Glazing Systems Ltd",
+    "compression": "maximum",
+    "asar": true,
+    "directories": {
+      "output": "dist",
+      "buildResources": "build"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "app.html",
+      "seed-data.json",
+      "database.js",
+      "js/**/*"
+    ],
+    "extraMetadata": {
+      "name": "ags-trade-pricing"
+    },
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        },
+        {
+          "target": "portable",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "publisherName": "Affordable Glazing Systems Ltd",
+      "verifyUpdateCodeSignature": false
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "AGS Trade Pricing",
+      "uninstallDisplayName": "AGS Trade Pricing",
+      "deleteAppDataOnUninstall": false,
+      "runAfterFinish": true
+    },
+    "portable": {
+      "artifactName": "AGS-Trade-Pricing-Portable-${version}.${ext}"
+    }
+  },
+  "devDependencies": {
+    "electron": "^38.1.0",
+    "electron-builder": "^26.0.12"
+  }
+}
